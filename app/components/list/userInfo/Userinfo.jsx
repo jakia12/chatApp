@@ -1,16 +1,18 @@
+import Image from "next/image";
+import avatar from "../../../../public/prof.png";
 import "./userInfo.css";
 
 const Userinfo = () => {
   // Static user data
   const currentUser = {
-    avatar: "./avatar.png",
+    avatar: avatar,
     username: "Static User",
   };
 
   return (
     <div className="userInfo">
       <div className="user">
-        <img src={currentUser.avatar} alt="" />
+        <Image src={currentUser.avatar} alt="" width={120} height={120} />
         <h2>{currentUser.username}</h2>
       </div>
       <div className="icons">
