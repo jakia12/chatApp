@@ -1,3 +1,5 @@
+import Image from "next/image";
+import avatar from "../../../../public/prof.png";
 import AddUser from "./addUser/addUser";
 import "./chatList.css";
 
@@ -8,7 +10,7 @@ const ChatList = () => {
       chatId: "1",
       user: {
         username: "JohnDoe",
-        avatar: "./avatar1.png",
+        avatar: avatar,
         blocked: [],
       },
       lastMessage: "Hey there!",
@@ -18,7 +20,7 @@ const ChatList = () => {
       chatId: "2",
       user: {
         username: "JaneSmith",
-        avatar: "./avatar2.png",
+        avatar: avatar,
         blocked: [],
       },
       lastMessage: "What's up?",
@@ -57,9 +59,11 @@ const ChatList = () => {
             backgroundColor: chat?.isSeen ? "transparent" : "#5183fe",
           }}
         >
-          <img
-            src={chat.user.avatar || "./avatar.png"}
+          <Image
+            src={chat.user.avatar}
             alt={chat.user.username}
+            width={120}
+            height={120}
           />
           <div className="texts">
             <span>{chat.user.username}</span>

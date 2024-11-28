@@ -1,9 +1,11 @@
+import Image from "next/image";
+import avatar from "../../../public/prof.png";
 import "./chat.css";
 
 const Chat = () => {
   // Static data
   const user = {
-    avatar: "./avatar.png",
+    avatar: avatar,
     username: "Static User",
   };
   const messages = [
@@ -37,7 +39,7 @@ const Chat = () => {
     <div className="chat">
       <div className="top">
         <div className="user">
-          <img src={user?.avatar || "./avatar.png"} alt="" />
+          <Image src={user?.avatar} alt="" width={120} height={120} />
           <div className="texts">
             <span>{user?.username}</span>
             <p>Lorem ipsum dolor, sit amet.</p>
